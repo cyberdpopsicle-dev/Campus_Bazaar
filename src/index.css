@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#f7f5ef] text-neutral-800 font-sans antialiased;
+    background-image: radial-gradient(rgba(15, 120, 35, 0.06) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+  ::selection {
+    @apply bg-primary-200 text-primary-900;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition
+      active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline-none
+      focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2;
+  }
+  .btn-primary {
+    @apply btn bg-primary-700 text-white shadow-[0_2px_0_0_#115f20] hover:bg-primary-800;
+  }
+  .btn-accent {
+    @apply btn bg-accent-500 text-white shadow-[0_2px_0_0_#c3440c] hover:bg-accent-600;
+  }
+  .btn-ghost {
+    @apply btn border border-neutral-200 bg-white text-neutral-700 hover:border-neutral-300 hover:bg-neutral-50;
+  }
+  .btn-danger {
+    @apply btn border border-red-200 bg-white text-red-600 hover:bg-red-50;
+  }
+  .field {
+    @apply w-full rounded-xl border border-neutral-200 bg-white px-3.5 py-2.5 text-sm text-neutral-800
+      placeholder:text-neutral-400 transition focus:border-primary-500 focus:outline-none focus:ring-4
+      focus:ring-primary-100;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-semibold text-neutral-700;
+  }
+  .card {
+    @apply rounded-2xl border border-neutral-200/80 bg-white shadow-[0_1px_2px_rgba(15,23,42,0.04)];
+  }
+  .skeleton {
+    @apply animate-pulse rounded-lg bg-neutral-200/70;
+  }
+}
